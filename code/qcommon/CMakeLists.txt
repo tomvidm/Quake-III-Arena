@@ -1,7 +1,6 @@
 project(qcommon)
 
-add_library(
-    qcommon 
+set(qcommon_COMMON_SOURCES
     cm_load.c
     cm_patch.c
     cm_polylib.c
@@ -19,6 +18,11 @@ add_library(
     vm.c
     vm_interpreted.c
     vm_x86.c
+    )   
+
+add_library(
+    qcommon
+    ${qcommon_COMMON_SOURCES}
     )
 
 target_link_libraries(
